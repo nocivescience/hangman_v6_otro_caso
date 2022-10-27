@@ -2,6 +2,9 @@ html,body {
     font-size: 1.2em;
     font-family: 'Arvo', serif;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -21,10 +24,14 @@ section#hangman {
 
 #hangm {
     text-align: center;
+    box-shadow: 0 0 20px black;
+    width: 100%;
+    min-width: 1000px;
 }
 
 .h {
-    opacity: 0;
+    opacity: 0.1;
+    filter: grayscale(1);
 }
 
 #hangm_animation {
@@ -42,7 +49,7 @@ section#hangman {
 	border-radius: 50%;
 	width: 40px;
 	height: 40px; 
-    background-color: #FFCC99;
+    background-color: #12c0ff;
     position: relative;
     bottom: 150px;
     left: 112px;
@@ -50,7 +57,7 @@ section#hangman {
 }
 
 .man_upper {
-    background: #000066;
+    background: #12c0ff;
     width: 40px;
     height: 50px;
     position: relative;
@@ -59,12 +66,13 @@ section#hangman {
 }
 
 .man_lower {
-    background: #330099;
+    background: 12c0ff;
     width: 30px;
     height: 30px;
     position: relative;
     left: 117px;
     bottom: 150px;
+    background: #12c0ff;
 }
 
 .pole_h {
@@ -96,7 +104,7 @@ section#hangman {
 .rope {
     width: 6px;
     height: 40px;
-    background-color: #996633;
+    background-color: #12c0ff;
     position: relative;
     bottom: 150px;
     left: 130px;
