@@ -45,7 +45,7 @@ const draw = () => {
 	for(let i = 0; i < rainDrops.length; i++)
 	{
 		const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-		context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+		context.fillText(text, rainDrops[i]*fontSize, i*fontSize);
 		
 		if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
 			rainDrops[i] = 1;
@@ -61,8 +61,8 @@ const horizontal=()=>{
 	context.font=anotherFontSize+'px monospace';
 	for( let i=0;i<windDrops.length;i++){
 		const text=alphabet.charAt(Math.floor(Math.random()*alphabet.length));
-		context.fillText(text,i*anotherFontSize,windDrops[i]*anotherFontSize);
-		if(windDrops[i]*anotherFontSize>canvas.height&&Math.random()>0.975){
+		context.fillText(text,windDrops[i]*anotherFontSize,i*anotherFontSize);
+		if(windDrops[i]*anotherFontSize>canvas.width&&Math.random()>0.975){
 			windDrops[i]=1;
 		}
 		windDrops[i]+=2;
