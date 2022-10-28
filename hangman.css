@@ -1,3 +1,11 @@
+*{
+    box-sizing: border-box;
+    margin: none;
+}
+html{
+    overflow: hidden;
+    margin: none;
+}
 html,body { 
     font-size: 1.2em;
     font-family: 'Arvo', serif;
@@ -5,6 +13,7 @@ html,body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 a {
@@ -21,12 +30,25 @@ section#hangman {
     height: 30.5em;
     overflow: hidden;
 }
-
+#hangm_end{
+    height: 26px;
+}
 #hangm {
     text-align: center;
-    box-shadow: 0 0 20px black;
+    margin-top: 20px;
     width: 100%;
     min-width: 1000px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.911);
+}
+
+#hangm.fondo{
+    background: rgba(63, 188, 255, 0.686);
+}
+
+#hangm.letras{
+    color: rgb(137, 228, 0);
+    filter: grayscale(0);
 }
 
 .h {
@@ -66,7 +88,6 @@ section#hangman {
 }
 
 .man_lower {
-    background: 12c0ff;
     width: 30px;
     height: 30px;
     position: relative;
@@ -74,7 +95,20 @@ section#hangman {
     bottom: 150px;
     background: #12c0ff;
 }
-
+.man_brace{
+    background: #12c0ff;
+    width: 20px;
+    height: 40px;
+    position: relative;
+}
+.h.man_brace.lefting{
+    left:155px;
+    bottom: 230px;
+}
+.h.man_brace.righting{
+    right: -90px;
+    bottom: 270px;
+}
 .pole_h {
     background: #000;
     width: 100px;
@@ -108,4 +142,33 @@ section#hangman {
     position: relative;
     bottom: 150px;
     left: 130px;
+}
+canvas{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    margin: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botones{
+    width: 90%;
+    height: 70px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.btn{
+    width: 100px;
+    margin: 0 15px;
+    padding: 10px;
+    background-color: #000;
+    color: antiquewhite;
+    border-radius: 4px;
 }

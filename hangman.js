@@ -1,13 +1,19 @@
 var Hangman = (function () {
-    'use strict';
+    // 'use strict';
     class Hangman {
         constructor(elId){
             this.elId       = elId;
             this.words      = [
-                'PROGRAMMER', 'BRAINSTORM', 'CREATIVE', 'LOLLIPOP',
-                'CULTURE', 'RAZORSHARP', 'SCREWDRIVER', 'TYPEWRITER'
+                'PROGRAMMERWIZ', 'BRAINSTORMWIZ', 'CREATIVEWIZ', 'LOLLIPOPWIZ',
+                'CULTUREWIZ', 'RAZORSHARPWIZ', 'SCREWDRIVERWIZ', 'TYPEWRITERWIZ'
             ]
         }
+    }
+    Hangman.prototype.colores= function(){
+        document.getElementById('hangm').classList.toggle('fondo');
+    }
+    Hangman.prototype.letras=function(){
+        document.getElementById('hangm').classList.toggle('letras');
     }
     Hangman.prototype.reset = function () {
         // Variables
@@ -43,7 +49,7 @@ var Hangman = (function () {
             // Show next part of hangman character
             this.showElementByIdWithContent(this.elId + "_" + this.MISTAKES, null);
             // Check if its Game Over
-            if (this.MISTAKES === 6) {
+            if (this.MISTAKES === 8) {
                 this.showElementByIdWithContent(this.elId + "_end", "GAME OVER!<br/>The word was: " + this.WORD);
                 this.STOPPED = true;
             }
@@ -65,6 +71,8 @@ var Hangman = (function () {
             document.getElementById(elId).innerHTML = content;
         }
         document.getElementById(elId).style.opacity = 1;
+        document.getElementById(elId).style.transform='rotateY(1800deg)';
+        document.getElementById(elId).style.transition='.5s ease-out transform';
     };
 
     /**
@@ -75,7 +83,8 @@ var Hangman = (function () {
     Hangman.prototype.hideElementByClass = function (elClass) {
         var elements = document.getElementsByClassName(elClass), i;
         for (i = 0; i < elements.length; i++) {
-            elements[i].style.opacity = 0;
+            elements[i].style.opacity = 0.1;
+            elements[i].style.transform='rotateY(0deg)';
         }
     };
 

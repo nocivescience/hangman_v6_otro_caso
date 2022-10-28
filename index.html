@@ -8,7 +8,6 @@
     </head>
     <body>
         <div id="hangm">
-
                 <div style="margin-bottom: 3em;">
                     <div id="hangm_end" class="h"></div>
                 </div>
@@ -22,6 +21,8 @@
                     <div id="hangm_4" class="h man_head"></div>
                     <div id="hangm_5" class="h man_upper"></div>
                     <div id="hangm_6" class="h man_lower"></div>
+                    <div id="hangm_7" class="h man_brace lefting"></div>
+                    <div id="hangm_8" class="h man_brace righting"></div>
                 </div>
 
                 <div style="height: 2em;">
@@ -35,10 +36,14 @@
                         </div>
                         <input id="guess" onkeyup="Hangman.guess(this.value); this.value=''; return false;" type="text" placeholder="">
                     </div>
-                    <div class="col-sm-3">
-                        <button type="button" id="btn-start" class="btn-lg btn-info" onclick="Hangman.reset(); return false;" >New Game</button>
+                    <div class="col-sm-3 botones">
+                        <button type="button" id="btn-start" class="btn btn-lg btn-info" onclick="Hangman.reset(); return false;" >Jugar</button>
+                        <button type="button" id="btnColor" class="btn" onclick="Hangman.colores(); return false">Fondo</button>
+                        <button type="button" id="btnLetras" class="btn" onclick="Hangman.letras(); return false">Fondo</button>
                     </div>
                 </form>
         </div>
+        <canvas></canvas>
     </body>
+    <script src="./matrix.js"></script>
 </html>
